@@ -1,8 +1,19 @@
 <h1>This is the result</h1>
 
 <h2>Your URL</h2>
-<a href="<%=@data.long%>"><%=@data.long%></a>
+
+<% if !@data.errors.empty? %>
+		
+		<h3> Your URL is not in a correct format.</h3>
+<% else %>
+	
+		<a href="<%=@data.long%>"><%=@data.long%></a>
+
+		
+<% end %>
 
 
 <h2>Your short URL</h2>
 <a href="<%=@data.short%>">http://<%=@data.short%></a>
+
+
