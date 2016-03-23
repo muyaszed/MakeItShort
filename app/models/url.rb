@@ -1,4 +1,8 @@
 class Url < ActiveRecord::Base
+
+	# def initialize
+	# 	@count = 0
+	# end
 	
 	before_create :shorten
 	validates_format_of :long, :with => URI::regexp(["http", "https"])
@@ -16,6 +20,9 @@ class Url < ActiveRecord::Base
 		self.save
 	end
 
-	#
+	# def index
+		
+		
+	# end
 end
 

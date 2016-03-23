@@ -35,11 +35,11 @@ get '/:short' do
 end
 
 
-get '/list' do
-
+# get '/list' do
 	
-	erb :"static/index"
-end
+	
+# 	erb :"static/index"
+# end
 
 
 

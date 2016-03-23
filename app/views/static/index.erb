@@ -34,7 +34,7 @@
 
 			</div>
 			<div class="short">
-				<a href="<%=@data.short%>">http://<%=@data.short%></a>
+				<a href="<%=@data.short%>" target="_blank">http://mis/<%=@data.short%></a>
 					
 			</div>
 
@@ -51,8 +51,29 @@
 <div class="list">
 
 	<div class="table">
+		  
+		
+		<table>
+		  <tr>
+		  	<th>item</th>
+		    <th class="long">long_urls</th>
+		    <th class="short">short_urls</th>
+		    <th class="count">click_counts</th>
+		  </tr>
 
+		<% @count = 1 %>
+		
+		<%  Url.find_each do |item|%>
+		  <tr style="background-color: <%if @count % 2 != 0%> lightgreen <% else %> white <% end%>">
+		  	<td class="index"><%= @count %>. </td>
+		    <td class="long"><a href="<%= item.long %>" target="_blank"><%= item.long %></a></td>
+		    <td class="short"><a href="<%= item.short %>" target="_blank">http://mis/<%= item.short %></a></td>
+		    <td class="count"><%= item.click_count %></td>
+		  </tr>
 
+		<% @count += 1 %>
+		<% end %>
+		</table>
 	</div>
 
 </div>
