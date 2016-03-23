@@ -4,7 +4,9 @@
 
 <% if !@data.errors.empty? %>
 		
-		<h3> Your URL is not in a correct format.</h3>
+		<h3> Your URL <%=@data.errors.messages[:long].join %>.</h3>
+		
+
 <% else %>
 	
 		<a href="<%=@data.long%>"><%=@data.long%></a>

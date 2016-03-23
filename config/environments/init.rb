@@ -17,6 +17,8 @@ require 'logger'
 require 'sinatra'
 require "sinatra/reloader" if development?
 
+require 'google-webfonts'
+
   # embedded ruby
 require 'erb'
 require 'uri'

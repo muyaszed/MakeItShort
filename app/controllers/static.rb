@@ -13,15 +13,11 @@ end
 
 post '/urls' do
 	
-	@data = Url.create(long: params[:long_url])
+	p @data = Url.create(long: params[:long_url])
 	
-	if @data.errors.empty?
-		puts "no error"
-	else
-		puts @data.errors.messages[:long]
-	end
+	puts @data.errors.messages[:long]
 
-	erb :"static/result"
+	erb :"static/index"
 end
 
 # get '/:name' do
@@ -33,8 +29,16 @@ get '/:short' do
 	data.counter
 	puts "You are going here #{data.long} and count #{data.click_count}"
 	
+
 	redirect data.long
  	
+end
+
+
+get '/list' do
+
+	
+	erb :"static/index"
 end
 
 

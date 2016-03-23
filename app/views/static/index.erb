@@ -1,13 +1,67 @@
-<h1>Make it short</h1>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
+<div class="header">
+	<div class="title">
+		make_it_short:
+	</div>
+	<div class="form">
+		<form action="/urls" method="post">
+				
+				<input class="name" type ="text" name="long_url">
+				<!-- <p>http://mis.com/<input type ="text" name="short_url"></p> -->
+				<input class="submit" type ="submit" value="Short"> 
 
-<form action="/urls" method="post">
-	Enter URL:
-	<input type ="text" name="long_url">
-	<!-- <p>http://mis.com/<input type ="text" name="short_url"></p> -->
-	<input type ="submit" value="Short"> 
+		</form>
+	</div>
 
-</form>
+</div>
+
+<div class="result">
+
+
+<% if !@data.nil? %> 
+
+	<% if !@data.errors.empty? %>
+			
+			<h3> Your URL <%=@data.errors.messages[:long].join %>.</h3>
+			
+
+	<% else %>
+
+		<div class="inner-result">
+
+			<div class="title-url">
+				your_short_url:
+				
+
+			</div>
+			<div class="short">
+				<a href="<%=@data.short%>">http://<%=@data.short%></a>
+					
+			</div>
+
+
+
+		</div>
+			
+	<% end %>
+
+<% end %>
+
+</div>
+
+<div class="list">
+
+	<div class="table">
+
+
+	</div>
+
+</div>
+
+
+
+
+
+
+
+
+
