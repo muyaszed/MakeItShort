@@ -12,43 +12,62 @@
 		</form>
 	</div>
 
-</div>
+</div> <!--end of header -->
 
 <div class="result">
 
 
-<% if !@data.nil? %> 
+	<% if !@data.nil? %> 
 
-	<% if !@data.errors.empty? %>
-			
-			<h3> Your URL <%=@data.errors.messages[:long].join %>.</h3>
-			
-
-	<% else %>
-
-		<div class="inner-result">
-
-			<div class="title-url">
-				your_short_url:
+		<% if !@data.errors.empty? %>
+				
+				<h3> Your URL <%=@data.errors.messages[:long].join %>.</h3>
 				
 
-			</div>
-			<div class="short">
-				<a href="<%=@data.short%>" target="_blank">http://mis/<%=@data.short%></a>
+		<% else %>
+
+			<div class="inner-result">
+
+				<div class="title-url">
+					your_short_url:
 					
+
+				</div>
+				<div class="short">
+					<a href="<%=@data.short%>" target="_blank">http://mis/<%=@data.short%></a>
+						
+				</div>
+
+
+
 			</div>
+				
+		<% end %>
 
-
-
-		</div>
-			
 	<% end %>
 
-<% end %>
+	<div class="menu">
+		|  <span class="show">show_all_links</span>   |   <span class="desc">read_instruction</span>  |
+	</div>
 
-</div>
+</div><!--end of result -->
 
-<div class="list">
+<div class="instruction">
+	<div class="ins-title">
+		<h2>this_is_the_instruction</h2>
+	</div>
+
+	<div class="ins-body">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</div>
+</div><!--end of instruction-->
+
+<div id=""class="list">
 
 	<div class="table">
 		  
@@ -74,9 +93,15 @@
 		<% @count += 1 %>
 		<% end %>
 		</table>
-	</div>
+	</div><!--end of table-->
 
-</div>
+
+
+</div><!-- end of list -->
+
+<div class="bottom-bar">
+
+</div><!--end of bottom bar-->
 
 
 
