@@ -6,7 +6,32 @@ function arrow_loop() {
 	$('#arrow-3').animate({bottom: '40px'}, 500, 'linear').animate({bottom: '50px'}, 500, 'linear', arrow_loop);
 }
 
+
+
 $(document).ready(function() {
+
+	$('form').submit(function(event){
+		event.preventDefault();
+
+		var $form = $( this ),
+	    term = $form.find( "input[name='long_url']" ).val(),
+	    url = $form.attr( "action" );
+
+	    var posting = $.post( url, { long_url: term } );
+
+	    posting.done(function( data ) {
+		    // var content = $( data ).find( ".result" );
+		    result = $(data).filter('.result').html();
+		    list = $(data).filter('.list').html();
+		    console.log(result);
+		    console.log(list);
+		    $('.result').empty().append(result);
+		    $('.list').empty().append(list);
+		});
+
+	});
+
+
 	$('span.show').click(function() {
 		$('.instruction').hide();
 		$('.list').slideToggle('slow');
@@ -53,11 +78,6 @@ $(document).ready(function() {
 		};
 
 	});
-
-	
-
-
-
 
 	
 });

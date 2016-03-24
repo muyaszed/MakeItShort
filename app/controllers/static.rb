@@ -17,7 +17,7 @@ post '/urls' do
 	
 	puts @data.errors.messages[:long]
 
-	erb :"static/index"
+	erb :"static/index", :layout => (request.xhr? ? false : :layout)
 end
 
 # get '/:name' do
