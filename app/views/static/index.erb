@@ -58,12 +58,18 @@
 		<h2>this_is_the_instruction</h2>
 	</div> -->
 
+	<i class="left-arrow fa fa-chevron-left fa-3x"></i>
+	
+
+	
+	<i class="right-arrow fa fa-chevron-right fa-3x"></i>
+	
 	<div id="step-1" class="ins-body">
 		<h2>step_one</h2>
 		<p>insert your url </p>
 		<p><img src="img/step1.jpeg"></p>
 		<i id="arrow-1" class="fa fa-arrow-up"></i>
-		<p><span id="next-1">next</span></p>
+		<!-- <p><span id="next-1">next</span></p> -->
 		
 	</div>
 
@@ -72,7 +78,7 @@
 		<p>click the button</p>
 		<p><img src="img/step2.jpeg"></p>
 		<i id="arrow-2" class="fa fa-arrow-up"></i>
-		<p><span id="prev-2">prev</span> | <span id="next-2">next</span></p>
+		<!-- <p><span id="prev-2">prev</span> | <span id="next-2">next</span></p> -->
 	</div>
 
 	<div id="step-3" class="ins-body">
@@ -80,7 +86,7 @@
 		<p>use your short url</p>
 		<p><img src="img/step3.jpeg"></p>
 		<i id="arrow-3" class="fa fa-arrow-up"></i>
-		<p><span id="prev-3">prev</span></p>
+		<!-- <p><span id="prev-3">prev</span></p> -->
 	</div>
 	<div class="clear"></div>
 </div><!--end of instruction-->
@@ -100,7 +106,7 @@
 
 		<% @count = 1 %>
 		
-		<%  Url.find_each do |item|%>
+		<%  Url.last(100).each do |item|%>
 		  <tr style="background-color: <%if @count % 2 != 0%> lightgreen <% else %> white <% end%>">
 		  	<td class="index"><%= @count %>. </td>
 		    <td class="long"><a href="<%= item.long %>" target="_blank"><%= item.long %></a></td>

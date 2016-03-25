@@ -176,6 +176,24 @@ span.show:hover, span.desc:hover{
     clear: both;
 }
 
+.left-arrow {
+	position: absolute;
+    top: 150px;
+    left: 5px;
+    cursor: pointer; 
+	cursor: hand;
+	z-index: 99;
+}
+
+.right-arrow {
+	position: absolute;
+    top: 150px;
+    right: 5px;
+    cursor: pointer; 
+	cursor: hand;
+	z-index: 99;
+}
+
 .ins-title h2{
 font-family: 'Roboto', sans-serif;
 }

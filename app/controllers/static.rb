@@ -2,10 +2,10 @@
 
 get '/' do
 
-	data = Url.all
-	data.each do |item|
-		puts "#{item.long} and #{item.short} , click:#{item.click_count}"
-	end
+	# data = Url.all
+	# data.each do |item|
+	# 	puts "#{item.long} and #{item.short} , click:#{item.click_count}"
+	# end
   erb :"static/index"
 
 
