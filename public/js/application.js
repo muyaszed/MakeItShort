@@ -20,11 +20,11 @@ function my_ajax() {
 
 	    posting.done(function( data ) {
 		    // var content = $( data ).find( ".result" );
-		    result = $(data).filter('.result').html();
+		    result = $(data).filter('.header').find('.result').html();
 		    list = $(data).filter('.list').html();
 		    console.log(result);
 		    console.log(list);
-		    $('.result').empty().append(result);
+		    $('.result').empty().show().append(result);
 		    $('.list').empty().append(list);
 		});
 }

@@ -1,57 +1,62 @@
 <div class="header">
 	<div class="title">
-		make_it_short:
+		<div id="logo">
+
+		</div>
 	</div>
 	<div class="form">
 		<form action="/urls" method="post">
 				
 				<input class="name" type ="text" name="long_url">
 				<!-- <p>http://mis.com/<input type ="text" name="short_url"></p> -->
-				<input class="submit" type ="submit" value="Short"> 
+				<input class="submit" type ="submit" value="short"> 
 
 		</form>
 	</div>
 
-</div> <!--end of header -->
-<!-- <div class="test"></div> -->
-<div class="result">
+	
+	<div class="result">
 
 
-	<% if !@data.nil? %> 
+		<% if !@data.nil? %> 
 
-		<% if !@data.errors.empty? %>
-				
-				<h3> Your URL <%=@data.errors.messages[:long].join %>.</h3>
-				
-
-		<% else %>
-
-			<div class="inner-result">
-
-				<div class="title-url">
-					your_short_url:
+			<% if !@data.errors.empty? %>
+					
+					<h3> Your URL <%=@data.errors.messages[:long].join %>.</h3>
 					
 
-				</div>
-				<div class="short">
-					<a href="<%=@data.short%>" target="_blank">http://mis/<%=@data.short%></a>
+			<% else %>
+
+				<div class="inner-result">
+
+					<div class="title-url">
+						your_short_url:
 						
+
+					</div>
+					<div class="short">
+						<a href="<%=@data.short%>" target="_blank">http://mis/<%=@data.short%></a>
+							
+					</div>
+
+
+
 				</div>
+					
+			<% end %>
 
-
-
-			</div>
-				
 		<% end %>
-
-	<% end %>
 
 	
 
-</div><!--end of result -->
+	</div><!--end of result -->
+
 <div class="menu">
-		|  <span class="show">show_all_links</span>   |   <span class="desc">read_instruction</span>  |
+		:  <span class="show">show_all_links</span>   :   <span class="desc">read_instruction</span>  :
 	</div>
+</div> <!--end of header -->
+<!-- <div class="test"></div> -->
+
 
 <div class="instruction">
 	<!-- <div class="ins-title">
@@ -125,7 +130,7 @@
 
 <div class="bottom-bar">
 
-</div><!--end of bottom bar-->
+<!-- </div>end of bottom bar -->
 
 
 
