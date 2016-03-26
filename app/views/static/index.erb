@@ -70,26 +70,26 @@
 	<i class="right-arrow fa fa-chevron-right fa-3x"></i>
 	
 	<div id="step-1" class="ins-body">
-		<h2>step_one</h2>
+		<h2><span>step:</span>one</h2>
 		<p>insert your url </p>
-		<p><img src="img/step1.jpeg"></p>
+		<p><img src="img/step1.jpeg" style="width: 500px"></p>
 		<i id="arrow-1" class="fa fa-arrow-up"></i>
 		<!-- <p><span id="next-1">next</span></p> -->
 		
 	</div>
 
 	<div id="step-2" class="ins-body">
-		<h2>step_two</h2>
+		<h2><span>step:</span>two</h2>
 		<p>click the button</p>
-		<p><img src="img/step2.jpeg"></p>
+		<p><img src="img/step2.jpeg" style="width: 500px"></p>
 		<i id="arrow-2" class="fa fa-arrow-up"></i>
 		<!-- <p><span id="prev-2">prev</span> | <span id="next-2">next</span></p> -->
 	</div>
 
 	<div id="step-3" class="ins-body">
-		<h2>step_three</h2>
+		<h2><span>step:</span>three</h2>
 		<p>use your short url</p>
-		<p><img src="img/step3.jpeg"></p>
+		<p><img src="img/step3.jpeg" style="width: 500px"></p>
 		<i id="arrow-3" class="fa fa-arrow-up"></i>
 		<!-- <p><span id="prev-3">prev</span></p> -->
 	</div>
@@ -112,7 +112,7 @@
 		<% @count = 1 %>
 		
 		<%  Url.last(100).each do |item|%>
-		  <tr style="background-color: <%if @count % 2 != 0%> lightgreen <% else %> white <% end%>">
+		  <tr style="background-color: <%if @count % 2 != 0%> #ffd3d3 <% else %> white <% end%>">
 		  	<td class="index"><%= @count %>. </td>
 		    <td class="long"><a href="<%= item.long %>" target="_blank"><%= item.long %></a></td>
 		    <td class="short"><a href="<%= item.short %>" target="_blank">http://mis/<%= item.short %></a></td>

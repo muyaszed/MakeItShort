@@ -3,11 +3,11 @@ function arrow_loop() {
 
 	$('#arrow-2').animate({bottom: '40px'}, 500, 'linear').animate({bottom: '50px'}, 500, 'linear', arrow_loop);
 
-	$('#arrow-3').animate({bottom: '40px'}, 500, 'linear').animate({bottom: '50px'}, 500, 'linear', arrow_loop);
+	$('#arrow-3').animate({bottom: '30px'}, 500, 'linear').animate({bottom: '40px'}, 500, 'linear', arrow_loop);
 
-	$('.left-arrow').animate({left: '10px'}, 500, 'linear').animate({left: '5px'}, 500, 'linear', arrow_loop);
+	$('.left-arrow').animate({left: '160px'}, 500, 'linear').animate({left: '150px'}, 500, 'linear', arrow_loop);
 
-	$('.right-arrow').animate({right: '10px'}, 500, 'linear').animate({right: '5px'}, 500, 'linear', arrow_loop);
+	$('.right-arrow').animate({right: '160px'}, 500, 'linear').animate({right: '150px'}, 500, 'linear', arrow_loop);
 }
 
 function my_ajax() {
@@ -93,21 +93,33 @@ $(document).ready(function() {
 	// });
 
 	if($('#step-1').css('display') == 'block') {
-		$('.left-arrow').hide();
+		$('.right-arrow').mouseenter(function() {
+			$(this).css('color', 'red');
+		});
+		$('.right-arrow').mouseleave(function() {
+			$(this).css('color', 'black');
+		});
 	};
 
 	$('.left-arrow').click(function() {
 			
 
 		if($('#step-2').css('display') == 'block') {
-			$('.left-arrow').hide();
+			$('.right-arrow').mouseenter(function() {
+				$(this).css('color', 'red');
+			});
+			$('.left-arrow').mouseenter(function() {
+				$(this).css('color', 'black');
+			});
 			$('#step-2').hide('slide', {direction: 'left'}, 1000);
 			$('#step-1').show('slide', {direction: 'right'}, 1000);
 		}else if($('#step-3').css('display') == 'block') {
-			$('.instruction').animate({height: '350px'}, 'slow');
+			$('.right-arrow').mouseenter(function() {
+				$(this).css('color', 'red');
+			});
 			$('#step-3').hide('slide', {direction: 'left'}, 1000);
 			$('#step-2').show('slide', {direction: 'right'}, 1000);
-			$('.right-arrow').show();
+			// $('.right-arrow').show();
 
 		}
 	});
@@ -116,13 +128,20 @@ $(document).ready(function() {
 
 
 		if($('#step-1').css('display') == 'block') {
-			$('.left-arrow').show();
+			$('.left-arrow').mouseenter(function() {
+				$(this).css('color', 'red');
+			});
+			$('.left-arrow').mouseleave(function() {
+				$(this).css('color', 'black');
+			});
 			$('#step-1').hide('slide', {direction: 'right'}, 1000);
 			$('#step-2').show('slide', {direction: 'left'}, 1000);
 		}else if($('#step-2').css('display') == 'block') {
-			$('.instruction').animate({height: '450px'}, 'slow');
-			$('.left-arrow').show();
-			$('.right-arrow').hide();
+			// $('.instruction').animate({height: '450px'}, 'slow');
+			$('.right-arrow').mouseenter(function() {
+				$(this).css('color', 'black');
+			});
+													
 			$('#step-2').hide('slide', {direction: 'right'}, 1000);
 			$('#step-3').show('slide', {direction: 'left'}, 1000);
 		};
